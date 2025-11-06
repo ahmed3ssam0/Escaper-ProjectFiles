@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnxo72d0ae5vx"]
+
+[ext_resource type="Texture2D" uid="uid://djkcsv63wr5q0" path="res://Traps/Spikes/spikes.png" id="2_yrpoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3awl"]
+size = Vector2(39, 18)
+
+[node name="Spikes" type="Area2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -19.0
+offset_top = -31.0
+offset_right = 21.0
+offset_bottom = 9.0
+texture = ExtResource("2_yrpoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u3awl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
