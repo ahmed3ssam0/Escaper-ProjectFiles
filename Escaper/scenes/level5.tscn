@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dcxy0vxwon3oa" path="res://game_manager.gd" id="1_7eo2k"]
 [ext_resource type="AudioStream" uid="uid://dp2ckqubu7iaw" path="res://sounds/collection.mp3" id="2_phje4"]
 [ext_resource type="AudioStream" uid="uid://ciy2r1q3t70nj" path="res://sounds/main_song.mp3" id="3_rcqrb"]
-[ext_resource type="AudioStream" uid="uid://c8fsxcrte8rxn" path="res://sounds/end.mp3" id="4_xrxmp"]
+[ext_resource type="AudioStream" uid="uid://b51x4rt7uxamk" path="res://sounds/boss_end.mp3" id="4_ul3a2"]
 [ext_resource type="AudioStream" uid="uid://dcnqcxolul1q8" path="res://sounds/smb_jump-small.mp3" id="5_ul3a2"]
 [ext_resource type="AudioStream" uid="uid://ct6u44xbydi2" path="res://sounds/smb_jump-super.mp3" id="6_ibbb1"]
 [ext_resource type="AudioStream" uid="uid://6mg8v5bc1uas" path="res://sounds/pain.mp3" id="7_3wd6l"]
@@ -401,7 +401,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="EndSound" type="AudioStreamPlayer" parent="GameManager"]
-stream = ExtResource("4_xrxmp")
+stream = ExtResource("4_ul3a2")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="GameManager"]
 stream = ExtResource("5_ul3a2")

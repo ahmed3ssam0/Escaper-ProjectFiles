@@ -1,17 +1,13 @@
 extends Node
 
-@onready var game_manager: Node = %GameManager
-
 
 func _on_music_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		game_manager.unmute_music()
+		MenuManager.play_main_sound()
 	elif not toggled_on:
-		game_manager.mute_music()
+		MenuManager.pause_main_sound()
 
 
-func _on_sfx_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		game_manager.unmute_sfx()
-	elif not toggled_on:
-		game_manager.mute_sfx()
+
+func _on_exit_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_manu.tscn")

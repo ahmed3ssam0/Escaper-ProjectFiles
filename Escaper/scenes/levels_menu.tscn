@@ -1,8 +1,95 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5j1m3uon3pxy"]
+[gd_scene load_steps=11 format=3 uid="uid://b5j1m3uon3pxy"]
 
 [ext_resource type="Script" uid="uid://besnya0sresua" path="res://scenes/levels_menu.gd" id="1_5vuwt"]
-[ext_resource type="Texture2D" uid="uid://blo77igmqc10s" path="res://background/Yellow.png" id="1_grwcp"]
-[ext_resource type="Texture2D" uid="uid://daq8jk5os6ku2" path="res://background/logo.png" id="2_5vuwt"]
+[ext_resource type="Texture2D" uid="uid://1cfx5yk04bct" path="res://background/background.png" id="2_250ps"]
+[ext_resource type="Texture2D" uid="uid://damdlrhrer28i" path="res://background/logo.png" id="3_8gkdn"]
+[ext_resource type="FontFile" uid="uid://by3ufvfs0ni3g" path="res://background/GAMERIA.ttf" id="4_xc0ai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl1pl"]
+bg_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.3254902, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0kpc"]
+bg_color = Color(0, 0.3254902, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_250ps"]
+bg_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.3254902, 0, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 200
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 200
+shadow_size = 5
+shadow_offset = Vector2(1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktp5v"]
+bg_color = Color(0, 0.3254902, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 200
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 200
+shadow_size = 5
+shadow_offset = Vector2(1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gkdn"]
+bg_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.3254902, 0, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 200
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 200
+shadow_size = 5
+shadow_offset = Vector2(3, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xc0ai"]
+bg_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.3254902, 0, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 200
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 200
+shadow_size = 5
+shadow_offset = Vector2(1, 0)
 
 [node name="LevelsMenu" type="Node"]
 script = ExtResource("1_5vuwt")
@@ -14,8 +101,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_grwcp")
-stretch_mode = 1
+texture = ExtResource("2_250ps")
 
 [node name="Logo" type="TextureRect" parent="."]
 texture_filter = 1
@@ -30,14 +116,18 @@ offset_right = 154.0
 offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_5vuwt")
+texture = ExtResource("3_8gkdn")
 
 [node name="Exit" type="Button" parent="."]
+process_mode = 3
 offset_left = 929.0
 offset_top = 564.0
 offset_right = 1119.0
 offset_bottom = 616.0
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_nl1pl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y0kpc")
 text = "Back"
 
 [node name="Label" type="Label" parent="."]
@@ -46,8 +136,11 @@ offset_left = 122.0
 offset_top = 169.0
 offset_right = 222.0
 offset_bottom = 221.0
-theme_override_font_sizes/font_size = 45
-text = "LEVELS"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_xc0ai")
+theme_override_font_sizes/font_size = 50
+text = "Levels"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 offset_left = 158.0
@@ -62,7 +155,10 @@ columns = 5
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_250ps")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 text = "1"
 autowrap_trim_flags = 0
 
@@ -70,35 +166,50 @@ autowrap_trim_flags = 0
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gkdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 text = "2"
 
 [node name="Level3" type="Button" parent="GridContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 text = "3"
 
 [node name="Level4" type="Button" parent="GridContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 text = "4"
 
 [node name="Level5" type="Button" parent="GridContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 text = "5"
 
 [node name="Level6" type="Button" parent="GridContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 text = "6"
 autowrap_trim_flags = 0
 
@@ -106,7 +217,10 @@ autowrap_trim_flags = 0
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 disabled = true
 text = "7
 "
@@ -115,7 +229,10 @@ text = "7
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 disabled = true
 text = "8"
 
@@ -123,7 +240,10 @@ text = "8"
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 disabled = true
 text = "9"
 
@@ -131,7 +251,10 @@ text = "9"
 process_mode = 3
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
 disabled = true
 text = "10"
 
