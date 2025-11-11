@@ -1,0 +1,107 @@
+[gd_scene load_steps=20 format=3 uid="uid://dgjn4cyt7u4qw"]
+
+[ext_resource type="Script" uid="uid://dayqmrk11fb00" path="res://scenes/health_panal.gd" id="1_25v2l"]
+[ext_resource type="Texture2D" uid="uid://bm5rk54quv1ms" path="res://hearts/Cuore1.png" id="1_s1i4r"]
+[ext_resource type="Texture2D" uid="uid://pwp016snxc5a" path="res://hearts/Cuore2.png" id="2_g40f7"]
+[ext_resource type="Texture2D" uid="uid://c2ke0760pax51" path="res://hearts/Cuore3.png" id="3_25v2l"]
+[ext_resource type="Texture2D" uid="uid://mfsh011ojya7" path="res://hearts/Cuore4.png" id="4_cmkun"]
+[ext_resource type="Texture2D" uid="uid://wtohtpymqlyd" path="res://hearts/Cuore5.png" id="5_r24xw"]
+[ext_resource type="Texture2D" uid="uid://c4bli353w63gy" path="res://hearts/Cuore6.png" id="6_ugfr2"]
+[ext_resource type="Texture2D" uid="uid://cv77ktpsetb2u" path="res://hearts/Cuore7.png" id="7_37aov"]
+[ext_resource type="Texture2D" uid="uid://dfw7nfbequ7mj" path="res://hearts/Cuore8.png" id="8_vipej"]
+[ext_resource type="FontFile" uid="uid://by3ufvfs0ni3g" path="res://background/GAMERIA.ttf" id="9_g40f7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq0oc"]
+atlas = ExtResource("1_s1i4r")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msy1c"]
+atlas = ExtResource("2_g40f7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dkav"]
+atlas = ExtResource("3_25v2l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4niyd"]
+atlas = ExtResource("4_cmkun")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3umqw"]
+atlas = ExtResource("5_r24xw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqmnx"]
+atlas = ExtResource("6_ugfr2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p71k4"]
+atlas = ExtResource("7_37aov")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oofn"]
+atlas = ExtResource("8_vipej")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikw2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq0oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msy1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dkav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4niyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3umqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqmnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p71k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oofn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="HealthPanel" type="CanvasLayer"]
+offset = Vector2(930, 40)
+scale = Vector2(1.3, 1.3)
+transform = Transform2D(1.3, 0, 0, 1.3, 930, 40)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_top = -0.015000001
+anchor_bottom = -0.015000001
+offset_top = -0.27999973
+offset_bottom = -0.27999973
+script = ExtResource("1_25v2l")
+
+[node name="1" type="AnimatedSprite2D" parent="Panel"]
+texture_filter = 1
+position = Vector2(23.500002, 21.999998)
+scale = Vector2(1.4375, 1.2499999)
+sprite_frames = SubResource("SpriteFrames_ikw2v")
+autoplay = "default"
+
+[node name="HealthLabel" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 40.5
+offset_top = 11.0
+offset_right = 80.5
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("9_g40f7")
+theme_override_font_sizes/font_size = 20
+text = "x3"

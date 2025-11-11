@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var panel_2: Panel = %Panel2
 @onready var canvas_layer_2: CanvasLayer = %CanvasLayer2
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var game_manager: Node = %GameManager
@@ -14,7 +13,6 @@ var facing_left = false
 var is_hit = false
 var is_invincible = false
 var spawn_position: Vector2
-var health_node = 1
 var is_spawning = true
 
 func on_hit() -> void:
@@ -32,14 +30,11 @@ func on_hit() -> void:
 	sprite_2d.animation = "hit"
 	sprite_2d.play()
 	
-	if health_node < 3:
+	if HealthPanal.get_node("Panel").decrease():
 		game_manager.play_hurt_sound()
-		panel_2.remove_child(panel_2.get_node(str(health_node)))
-		health_node += 1
 	else:
 		game_manager.play_lose_sound()
 		get_tree().paused = true
-		panel_2.remove_child(panel_2.get_node(str(3)))
 		canvas_layer_2.show()
 	
 	# Invincibility window
@@ -63,6 +58,7 @@ func tramp_effect() -> void:
 	game_manager.play_double_jump_sound()
 
 func _ready() -> void:
+	HealthPanal.show()
 	sprite_2d.animation = "appearing"
 	spawn_position = global_position
 

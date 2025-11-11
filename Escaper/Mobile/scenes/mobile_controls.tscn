@@ -9,26 +9,52 @@
 [node name="MobileControls" type="CanvasLayer"]
 script = ExtResource("1_lxvuy")
 
-[node name="Left" type="TouchScreenButton" parent="."]
-position = Vector2(53, 500)
-scale = Vector2(1.7, 1.7)
+[node name="BottomLeftMargin" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -176.0
+offset_right = 666.0
+grow_vertical = 0
+
+[node name="Left" type="TouchScreenButton" parent="BottomLeftMargin"]
+position = Vector2(50, 0)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("1_smp7p")
 action = "left"
 
-[node name="Right" type="TouchScreenButton" parent="."]
-position = Vector2(283, 500)
-scale = Vector2(1.7, 1.7)
+[node name="Right" type="TouchScreenButton" parent="BottomLeftMargin"]
+position = Vector2(400, 0)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("2_jyei8")
 action = "right"
 
-[node name="Jump" type="TouchScreenButton" parent="."]
-position = Vector2(1000, 500)
-scale = Vector2(1.7, 1.7)
+[node name="BottomRightMargin" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -237.0
+offset_top = -187.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Jump" type="TouchScreenButton" parent="BottomRightMargin"]
+position = Vector2(50, 10)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("3_lxvuy")
 action = "jump"
 
-[node name="Menu" type="TouchScreenButton" parent="."]
-position = Vector2(1100, 80)
-scale = Vector2(0.8, 0.8)
+[node name="TopRightMargin" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -219.0
+offset_bottom = 158.0
+grow_horizontal = 0
+
+[node name="Menu" type="TouchScreenButton" parent="TopRightMargin"]
+position = Vector2(100, 45)
 texture_normal = ExtResource("4_jyei8")
 action = "esc"

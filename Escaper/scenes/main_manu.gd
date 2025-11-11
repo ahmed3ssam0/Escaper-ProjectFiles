@@ -2,6 +2,7 @@ extends Node
 
 func _ready() -> void:
 	MenuManager.play_main_sound()
+	HealthPanal.hide()
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

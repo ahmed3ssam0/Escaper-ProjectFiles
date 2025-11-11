@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5j1m3uon3pxy"]
+[gd_scene load_steps=13 format=3 uid="uid://b5j1m3uon3pxy"]
 
 [ext_resource type="Script" uid="uid://besnya0sresua" path="res://scenes/levels_menu.gd" id="1_5vuwt"]
 [ext_resource type="Texture2D" uid="uid://1cfx5yk04bct" path="res://background/background.png" id="2_250ps"]
@@ -17,6 +17,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 2
+shadow_offset = Vector2(2, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0kpc"]
 bg_color = Color(0, 0.3254902, 0, 1)
@@ -30,6 +31,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 2
+shadow_offset = Vector2(2, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_250ps"]
 bg_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
@@ -61,6 +63,19 @@ corner_radius_bottom_left = 200
 shadow_size = 5
 shadow_offset = Vector2(1, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idal5"]
+bg_color = Color(0.6, 0.6, 0.6, 0.4745098)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 200
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 200
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gkdn"]
 bg_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
 border_width_left = 3
@@ -75,6 +90,20 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 200
 shadow_size = 5
 shadow_offset = Vector2(3, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oegyn"]
+bg_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.3254902, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(2, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xc0ai"]
 bg_color = Color(0.41568628, 0.7019608, 0.28235295, 1)
@@ -104,7 +133,6 @@ grow_vertical = 2
 texture = ExtResource("2_250ps")
 
 [node name="Logo" type="TextureRect" parent="."]
-texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -127,6 +155,7 @@ offset_bottom = 616.0
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_nl1pl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nl1pl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y0kpc")
 text = "Back"
 
@@ -158,7 +187,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_250ps")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_250ps")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 text = "1"
 autowrap_trim_flags = 0
 
@@ -169,7 +200,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_8gkdn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 text = "2"
 
 [node name="Level3" type="Button" parent="GridContainer"]
@@ -179,7 +212,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 text = "3"
 
 [node name="Level4" type="Button" parent="GridContainer"]
@@ -189,7 +224,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 text = "4"
 
 [node name="Level5" type="Button" parent="GridContainer"]
@@ -199,7 +236,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 text = "5"
 
 [node name="Level6" type="Button" parent="GridContainer"]
@@ -209,7 +248,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 text = "6"
 autowrap_trim_flags = 0
 
@@ -220,7 +261,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 disabled = true
 text = "7
 "
@@ -232,7 +275,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 disabled = true
 text = "8"
 
@@ -243,7 +288,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 disabled = true
 text = "9"
 
@@ -254,7 +301,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_xc0ai")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xc0ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegyn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ktp5v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_idal5")
 disabled = true
 text = "10"
 

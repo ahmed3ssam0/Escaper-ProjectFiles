@@ -1,5 +1,8 @@
 extends Node
 
+func _ready() -> void:
+	HealthPanal.hide()
+
 
 func _on_level_1_pressed() -> void:
 	if get_tree().paused:

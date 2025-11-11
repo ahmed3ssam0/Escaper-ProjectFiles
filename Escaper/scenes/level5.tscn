@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://xeap0or08kfo"]
+[gd_scene load_steps=23 format=3 uid="uid://xeap0or08kfo"]
 
 [ext_resource type="Script" uid="uid://dcxy0vxwon3oa" path="res://game_manager.gd" id="1_7eo2k"]
 [ext_resource type="AudioStream" uid="uid://dp2ckqubu7iaw" path="res://sounds/collection.mp3" id="2_phje4"]
@@ -11,16 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://blo77igmqc10s" path="res://background/Yellow.png" id="9_phje4"]
 [ext_resource type="Texture2D" uid="uid://ds8jtr1d7q2gr" path="res://Terrain (16x16).png" id="10_a08dc"]
 [ext_resource type="PackedScene" uid="uid://bvtbp8dg7u6ee" path="res://scenes/main_character.tscn" id="11_kn78n"]
-[ext_resource type="Texture2D" uid="uid://bm5rk54quv1ms" path="res://hearts/Cuore1.png" id="12_nnygl"]
 [ext_resource type="PackedScene" uid="uid://b74pc8bvmw5d1" path="res://scenes/end_point.tscn" id="12_xrxmp"]
-[ext_resource type="Texture2D" uid="uid://pwp016snxc5a" path="res://hearts/Cuore2.png" id="13_78g21"]
 [ext_resource type="PackedScene" uid="uid://bvby2eay65dvj" path="res://scenes/level6.tscn" id="13_ul3a2"]
-[ext_resource type="Texture2D" uid="uid://c2ke0760pax51" path="res://hearts/Cuore3.png" id="14_7y8wg"]
-[ext_resource type="Texture2D" uid="uid://mfsh011ojya7" path="res://hearts/Cuore4.png" id="15_4wkpm"]
-[ext_resource type="Texture2D" uid="uid://wtohtpymqlyd" path="res://hearts/Cuore5.png" id="16_6jy7x"]
-[ext_resource type="Texture2D" uid="uid://c4bli353w63gy" path="res://hearts/Cuore6.png" id="17_2qn8l"]
-[ext_resource type="Texture2D" uid="uid://cv77ktpsetb2u" path="res://hearts/Cuore7.png" id="18_qvgq3"]
-[ext_resource type="Texture2D" uid="uid://dfw7nfbequ7mj" path="res://hearts/Cuore8.png" id="19_hvxtl"]
+[ext_resource type="FontFile" uid="uid://by3ufvfs0ni3g" path="res://background/GAMERIA.ttf" id="14_su468"]
+[ext_resource type="PackedScene" uid="uid://cm37tklqhxobv" path="res://scenes/collectable_apple.tscn" id="15_ylt8s"]
 [ext_resource type="PackedScene" uid="uid://wfh6ua2stjsi" path="res://scenes/pause_menu.tscn" id="20_1kwci"]
 [ext_resource type="PackedScene" uid="uid://b5e630ypq7lua" path="res://scenes/lose_menu.tscn" id="21_qx5iu"]
 [ext_resource type="PackedScene" uid="uid://7ndajholrwcy" path="res://scenes/angry_pig.tscn" id="22_rcqrb"]
@@ -321,69 +315,7 @@ texture = ExtResource("10_a08dc")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tda05")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mq0oc"]
-atlas = ExtResource("12_nnygl")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_msy1c"]
-atlas = ExtResource("13_78g21")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dkav"]
-atlas = ExtResource("14_7y8wg")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4niyd"]
-atlas = ExtResource("15_4wkpm")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3umqw"]
-atlas = ExtResource("16_6jy7x")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqmnx"]
-atlas = ExtResource("17_2qn8l")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p71k4"]
-atlas = ExtResource("18_qvgq3")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1oofn"]
-atlas = ExtResource("19_hvxtl")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ikw2v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mq0oc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_msy1c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7dkav")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4niyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3umqw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gqmnx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p71k4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1oofn")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7eo2k"]
 
 [node name="Node" type="Node"]
 
@@ -463,50 +395,39 @@ offset_left = 35.0
 offset_top = 35.0
 offset_right = 163.0
 offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7eo2k")
 
 [node name="PointsLabel" type="Label" parent="UI/Panel"]
 unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 47.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Points: 0"
+theme_override_fonts/font = ExtResource("14_su468")
+theme_override_font_sizes/font_size = 25
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="UI"]
-unique_name_in_owner = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -210.0
-offset_top = 24.0
-offset_right = -12.0
-offset_bottom = 68.0
-grow_horizontal = 0
+[node name="Collectable" parent="UI/Panel" instance=ExtResource("15_ylt8s")]
+position = Vector2(39, 20)
+scale = Vector2(2, 2)
+collision_layer = 0
+collision_mask = 0
 
-[node name="1" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(45, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
+[node name="AngryPig" parent="." instance=ExtResource("22_rcqrb")]
+position = Vector2(1082, 509)
 
-[node name="2" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(98, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
-
-[node name="3" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(148, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
+[node name="MobileControls" parent="." instance=ExtResource("25_ul3a2")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -518,14 +439,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.875
-offset_top = -86.5
-offset_right = 106.875
-offset_bottom = 86.5
+offset_left = -226.0
+offset_top = -139.5
+offset_right = 48.0
+offset_bottom = 139.5
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -543,8 +462,3 @@ offset_right = 137.0
 offset_bottom = 139.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="AngryPig" parent="." instance=ExtResource("22_rcqrb")]
-position = Vector2(1082, 509)
-
-[node name="MobileControls" parent="." instance=ExtResource("25_ul3a2")]

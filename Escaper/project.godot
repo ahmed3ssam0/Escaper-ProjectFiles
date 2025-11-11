@@ -13,11 +13,12 @@ config_version=5
 config/name="Escaper"
 run/main_scene="uid://dx2q8lbxf8t1y"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="uid://damdlrhrer28i"
+config/icon="uid://bldoxg4kkpf3w"
 
 [autoload]
 
 MenuManager="*res://scenes/menu_manager.tscn"
+HealthPanal="*res://scenes/health_panal.tscn"
 
 [display]
 

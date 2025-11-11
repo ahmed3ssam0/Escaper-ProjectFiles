@@ -95,7 +95,6 @@ grow_vertical = 2
 texture = ExtResource("2_eckp7")
 
 [node name="Logo" type="TextureRect" parent="."]
-texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -128,6 +127,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_m3cu0")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_m3cu0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m3cu0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kc7eb")
 text = "Play"
 
@@ -136,6 +136,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_m3cu0")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_501nv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m3cu0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nqqoy")
 text = "Options
 "
@@ -145,6 +146,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_m3cu0")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_eckp7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m3cu0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nqqoy")
 text = "Exit"
 

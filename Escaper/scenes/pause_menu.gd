@@ -1,6 +1,6 @@
 extends Control
 
-@onready var panel_2: Panel = $"../../UI/Panel2"
+#@onready var panel_2: Panel = $"../../UI/Panel2"
 @onready var canvas_layer: CanvasLayer = %CanvasLayer
 @onready var canvas_layer_2: CanvasLayer = %CanvasLayer2
 @onready var game_manager: Node = %GameManager
@@ -35,6 +35,7 @@ func _on_restart_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
+	HealthPanal.get_node("Panel").reset()
 	get_tree().change_scene_to_file("res://scenes/main_manu.tscn")
 
 

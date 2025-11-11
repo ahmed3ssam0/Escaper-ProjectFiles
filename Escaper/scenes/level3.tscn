@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bcv80pjtuaait"]
+[gd_scene load_steps=23 format=3 uid="uid://bcv80pjtuaait"]
 
 [ext_resource type="Script" uid="uid://dcxy0vxwon3oa" path="res://game_manager.gd" id="1_d5gix"]
 [ext_resource type="AudioStream" uid="uid://dp2ckqubu7iaw" path="res://sounds/collection.mp3" id="2_7hs6g"]
@@ -14,14 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://3370i68nghti" path="res://scenes/collectable_strewberry.tscn" id="12_8vbrh"]
 [ext_resource type="PackedScene" uid="uid://daci14c26h6od" path="res://scenes/spikes.tscn" id="13_d5gix"]
 [ext_resource type="PackedScene" uid="uid://cf4jut21is4y5" path="res://scenes/level4.tscn" id="15_d5gix"]
-[ext_resource type="Texture2D" uid="uid://bm5rk54quv1ms" path="res://hearts/Cuore1.png" id="16_fd0i2"]
-[ext_resource type="Texture2D" uid="uid://pwp016snxc5a" path="res://hearts/Cuore2.png" id="17_rpsh2"]
-[ext_resource type="Texture2D" uid="uid://c2ke0760pax51" path="res://hearts/Cuore3.png" id="18_nqu1f"]
-[ext_resource type="Texture2D" uid="uid://mfsh011ojya7" path="res://hearts/Cuore4.png" id="19_byu6n"]
-[ext_resource type="Texture2D" uid="uid://wtohtpymqlyd" path="res://hearts/Cuore5.png" id="20_1ptrm"]
-[ext_resource type="Texture2D" uid="uid://c4bli353w63gy" path="res://hearts/Cuore6.png" id="21_k8cr3"]
-[ext_resource type="Texture2D" uid="uid://cv77ktpsetb2u" path="res://hearts/Cuore7.png" id="22_b6oa4"]
-[ext_resource type="Texture2D" uid="uid://dfw7nfbequ7mj" path="res://hearts/Cuore8.png" id="23_g66mc"]
+[ext_resource type="FontFile" uid="uid://by3ufvfs0ni3g" path="res://background/GAMERIA.ttf" id="16_07lh1"]
 [ext_resource type="PackedScene" uid="uid://wfh6ua2stjsi" path="res://scenes/pause_menu.tscn" id="24_3e6vm"]
 [ext_resource type="PackedScene" uid="uid://b74pc8bvmw5d1" path="res://scenes/end_point.tscn" id="24_7hs6g"]
 [ext_resource type="PackedScene" uid="uid://b5e630ypq7lua" path="res://scenes/lose_menu.tscn" id="25_dyat2"]
@@ -322,69 +315,7 @@ texture = ExtResource("10_y8u0o")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tda05")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mq0oc"]
-atlas = ExtResource("16_fd0i2")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_msy1c"]
-atlas = ExtResource("17_rpsh2")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dkav"]
-atlas = ExtResource("18_nqu1f")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4niyd"]
-atlas = ExtResource("19_byu6n")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3umqw"]
-atlas = ExtResource("20_1ptrm")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqmnx"]
-atlas = ExtResource("21_k8cr3")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p71k4"]
-atlas = ExtResource("22_b6oa4")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1oofn"]
-atlas = ExtResource("23_g66mc")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ikw2v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mq0oc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_msy1c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7dkav")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4niyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3umqw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gqmnx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p71k4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1oofn")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6uuvf"]
 
 [node name="Node" type="Node"]
 
@@ -584,50 +515,36 @@ offset_left = 35.0
 offset_top = 35.0
 offset_right = 163.0
 offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6uuvf")
 
 [node name="PointsLabel" type="Label" parent="UI/Panel"]
 unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 47.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Points: 0"
+theme_override_fonts/font = ExtResource("16_07lh1")
+theme_override_font_sizes/font_size = 25
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="UI"]
-unique_name_in_owner = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -210.0
-offset_top = 24.0
-offset_right = -12.0
-offset_bottom = 68.0
-grow_horizontal = 0
+[node name="Collectable" parent="UI/Panel" instance=ExtResource("12_8vbrh")]
+position = Vector2(39, 20)
+scale = Vector2(2, 2)
+collision_layer = 0
+collision_mask = 0
 
-[node name="1" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(45, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
-
-[node name="2" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(98, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
-
-[node name="3" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(148, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
+[node name="MobileControls" parent="." instance=ExtResource("26_7hs6g")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -639,14 +556,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.875
-offset_top = -86.5
-offset_right = 106.875
-offset_bottom = 86.5
+offset_left = -226.0
+offset_top = -139.5
+offset_right = 48.0
+offset_bottom = 139.5
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -664,5 +579,3 @@ offset_right = 137.0
 offset_bottom = 139.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="MobileControls" parent="." instance=ExtResource("26_7hs6g")]

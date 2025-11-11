@@ -1,9 +1,13 @@
 extends Node
+@onready var music: CheckButton = $VBoxContainer/Music
 
+func _ready() -> void:
+	music.button_pressed = MenuManager.music_on
+	HealthPanal.hide()
 
 func _on_music_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		MenuManager.play_main_sound()
+		MenuManager.cont_main_sound()
 	elif not toggled_on:
 		MenuManager.pause_main_sound()
 

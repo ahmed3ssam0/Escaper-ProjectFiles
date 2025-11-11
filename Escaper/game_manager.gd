@@ -6,7 +6,7 @@ var points = 0
 
 func count_points():
 	points += 1
-	points_label.text = "Points: " + str(points)
+	points_label.text = str(points)
 
 func mute_music():
 	$MainSound.volume_db = -1000

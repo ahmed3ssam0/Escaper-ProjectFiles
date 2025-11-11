@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bilgy8kfjmcsg"]
+[gd_scene load_steps=19 format=3 uid="uid://bilgy8kfjmcsg"]
 
 [ext_resource type="Script" uid="uid://dcxy0vxwon3oa" path="res://game_manager.gd" id="1_pb07y"]
 [ext_resource type="AudioStream" uid="uid://dp2ckqubu7iaw" path="res://sounds/collection.mp3" id="2_veakt"]
@@ -11,14 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://coe3tcxmrup6e" path="res://background/Brown.png" id="9_wih4h"]
 [ext_resource type="Texture2D" uid="uid://ds8jtr1d7q2gr" path="res://Terrain (16x16).png" id="10_1w57c"]
 [ext_resource type="PackedScene" uid="uid://bvtbp8dg7u6ee" path="res://scenes/main_character.tscn" id="11_mxo2e"]
-[ext_resource type="Texture2D" uid="uid://bm5rk54quv1ms" path="res://hearts/Cuore1.png" id="12_d4pb7"]
-[ext_resource type="Texture2D" uid="uid://pwp016snxc5a" path="res://hearts/Cuore2.png" id="13_q50uy"]
-[ext_resource type="Texture2D" uid="uid://c2ke0760pax51" path="res://hearts/Cuore3.png" id="14_xoxsj"]
-[ext_resource type="Texture2D" uid="uid://mfsh011ojya7" path="res://hearts/Cuore4.png" id="15_5rol1"]
-[ext_resource type="Texture2D" uid="uid://wtohtpymqlyd" path="res://hearts/Cuore5.png" id="16_q4hdu"]
-[ext_resource type="Texture2D" uid="uid://c4bli353w63gy" path="res://hearts/Cuore6.png" id="17_o6jg1"]
-[ext_resource type="Texture2D" uid="uid://cv77ktpsetb2u" path="res://hearts/Cuore7.png" id="18_bammw"]
-[ext_resource type="Texture2D" uid="uid://dfw7nfbequ7mj" path="res://hearts/Cuore8.png" id="19_pqlmb"]
+[ext_resource type="FontFile" uid="uid://by3ufvfs0ni3g" path="res://background/GAMERIA.ttf" id="12_tvobc"]
+[ext_resource type="PackedScene" uid="uid://cm37tklqhxobv" path="res://scenes/collectable_apple.tscn" id="13_jfgty"]
 [ext_resource type="PackedScene" uid="uid://wfh6ua2stjsi" path="res://scenes/pause_menu.tscn" id="20_fcc15"]
 [ext_resource type="PackedScene" uid="uid://b5e630ypq7lua" path="res://scenes/lose_menu.tscn" id="21_gwi2b"]
 
@@ -317,69 +311,7 @@ texture = ExtResource("10_1w57c")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tda05")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mq0oc"]
-atlas = ExtResource("12_d4pb7")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_msy1c"]
-atlas = ExtResource("13_q50uy")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dkav"]
-atlas = ExtResource("14_xoxsj")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4niyd"]
-atlas = ExtResource("15_5rol1")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3umqw"]
-atlas = ExtResource("16_q4hdu")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqmnx"]
-atlas = ExtResource("17_o6jg1")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p71k4"]
-atlas = ExtResource("18_bammw")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1oofn"]
-atlas = ExtResource("19_pqlmb")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ikw2v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mq0oc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_msy1c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7dkav")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4niyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3umqw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gqmnx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p71k4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1oofn")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uaihi"]
 
 [node name="Node" type="Node"]
 
@@ -446,50 +378,34 @@ offset_left = 35.0
 offset_top = 35.0
 offset_right = 163.0
 offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_uaihi")
 
 [node name="PointsLabel" type="Label" parent="UI/Panel"]
 unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 47.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Points: 0"
+theme_override_fonts/font = ExtResource("12_tvobc")
+theme_override_font_sizes/font_size = 25
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="UI"]
-unique_name_in_owner = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -210.0
-offset_top = 24.0
-offset_right = -12.0
-offset_bottom = 68.0
-grow_horizontal = 0
-
-[node name="1" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(45, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
-
-[node name="2" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(98, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
-
-[node name="3" type="AnimatedSprite2D" parent="UI/Panel2"]
-texture_filter = 1
-position = Vector2(148, 21.999998)
-scale = Vector2(1.4375, 1.2499999)
-sprite_frames = SubResource("SpriteFrames_ikw2v")
-autoplay = "default"
+[node name="Collectable" parent="UI/Panel" instance=ExtResource("13_jfgty")]
+position = Vector2(39, 20)
+scale = Vector2(2, 2)
+collision_layer = 0
+collision_mask = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -501,14 +417,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.875
-offset_top = -86.5
-offset_right = 106.875
-offset_bottom = 86.5
+offset_left = -226.0
+offset_top = -139.5
+offset_right = 48.0
+offset_bottom = 139.5
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
