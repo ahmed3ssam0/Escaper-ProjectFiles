@@ -19,6 +19,7 @@ config/icon="uid://bldoxg4kkpf3w"
 
 MenuManager="*res://scenes/menu_manager.tscn"
 HealthPanal="*res://scenes/health_panal.tscn"
+GlobalState="*res://scenes/global_state.gd"
 
 [display]
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var canvas_layer_2: CanvasLayer = %CanvasLayer2
-@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D
 @onready var game_manager: Node = %GameManager
 
 const SPEED = 300.0
@@ -33,6 +33,7 @@ func on_hit() -> void:
 	if HealthPanal.get_node("Panel").decrease():
 		game_manager.play_hurt_sound()
 	else:
+		sprite_2d.hide()
 		game_manager.play_lose_sound()
 		get_tree().paused = true
 		canvas_layer_2.show()
@@ -58,6 +59,8 @@ func tramp_effect() -> void:
 	game_manager.play_double_jump_sound()
 
 func _ready() -> void:
+	sprite_2d = get_node("Sprite2D_" + GlobalState.selected_character_id)
+	sprite_2d.show()
 	HealthPanal.show()
 	sprite_2d.animation = "appearing"
 	spawn_position = global_position
